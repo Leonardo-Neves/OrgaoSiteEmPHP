@@ -11,6 +11,7 @@
 			<h3>Login</h3>
 			<hr>
 			<form class="form-group" action="UserController.php" method="POST">
+				<?php include('ValidationMessages.php'); ?>
 				<div class="row">
 					<div class="col-md-12">
 						<label>Email:</label>
@@ -25,8 +26,14 @@
 				</div>
 
 				<input type="hidden" value="FULL" name="login">
-
-				<button type="submit" class="btn btn-primary mt-2">Entrar</button>
+				<div class="row">
+					<div class="col-md-6">
+						<button type="submit" class="btn btn-primary mt-2">Entrar</button>
+					</div>
+					<div class="col-md-6 mt-3">
+						<span><a href="forgot_password.php">Esqueceu sua senha ?</a></span>
+					</div>
+				</div>
 
 			</form>
 		</div>

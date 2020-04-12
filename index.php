@@ -7,6 +7,7 @@
 <body>	
 	<?php include('shared/header.php'); ?>
 	<div class="container">
+		<?php include('ValidationMessages.php'); ?>
 		<h1>Index</h1>
 	</div>
 </body>

@@ -1,6 +1,16 @@
 <?php 
 	session_start();
 
+	function AlterSuccess()
+	{
+		$_SESSION['AlterSuccess'] = "Dados alterados com sucesso!";
+	}
+
+	function AlterError()
+	{
+		$_SESSION['AlterError'] = "Os dados não foram alterados, tente novamente!";
+	}
+
 	function TypeValidatorNotSelect()
 	{
 		$_SESSION['TypeErrorNotSelect'] = "Tipo não selectionado!";
@@ -8,7 +18,68 @@
 
 	function UserNotFound()
 	{
-		$_SESSION['UserNotFound'] = "Nenhum usuário encontrado";
+		$_SESSION['UserNotFound'] = "Nenhum usuário encontrado, ou dados errados!";
+	}
+
+	// Validation Product
+	
+	function TitleValidator($title)
+	{
+		if(strlen($title) === 0 || strlen($title) < 0)
+		{
+			$_SESSION['TitleErrorZero'] = "Informe um titulo maior que 0 caracteres!";
+			return false;
+		}
+		else if(empty($title) || is_null($title))
+		{
+			$_SESSION['TitleErrorNull'] = "Informe um titulo!";
+			return false;
+		}
+		else if(strlen($title) > 30)
+		{
+			$_SESSION['TitleErrorMaxLength'] = "Informe um titulo menor que 30 carecters!";
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+
+	// Validation User
+
+	function ForgotPassowordValidator($email)
+	{
+		include('connection.php');
+
+		$consultQuery = "select email from user where email = '$email'";
+
+		$data = mysqli_fetch_array($connectionUser->query($consultQuery));
+
+		if(strlen($email) === 0 || strlen($email) < 0)
+		{
+			$_SESSION['EmailErrorZero'] = "Informe um email maior que 0!";
+			return false;
+		}
+		else if(empty($email) || is_null($email))
+		{
+			$_SESSION['EmailErrorNull'] = "Informe um email!";
+			return false;
+		}
+		else if(strlen($email) > 30)
+		{
+			$_SESSION['EmailErrorMaxLength'] = "Informe um IBGE menor que 30 carecters!";
+			return false;
+		}
+		else if(empty($data))
+		{
+			$_SESSION['EmailErrorExist'] = "Email não existe cadastrado!";
+			return false;
+		}
+		else
+		{
+			return true;
+		}
 	}
 
 	function TypeValidator($type)
@@ -411,9 +482,7 @@
 		    	$_SESSION['CNPJErrorInvalid'] = "CNPJ Inválido!";
 		        return false;
 		    }
-		 
-		
-	}
+	}	
 	
 	function EncryptPasswordValidatorMD5($senha)
 	{

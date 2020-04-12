@@ -2,7 +2,7 @@
 <header>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container">
-		  	<a class="navbar-brand" href="#">Amigos da Paz</a>
+		  	<a class="navbar-brand" href="index.php">Amigos da Paz</a>
 		  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  	</button>
@@ -35,6 +35,28 @@
 			    	<ul class="navbar-nav">
 			      		<li class="nav-item active">
 			        		<a class="nav-link" href="index.php">Home</a>
+			      		</li>
+			    	</ul>
+			    	<ul class="navbar-nav">
+			      		<li class="nav-item active">
+			        		<a class="nav-link" href="profile.php">Perfil</a>
+			      		</li>
+			    	</ul>
+			    	<?php 
+			    	if(isset($_SESSION['OrganLoged']))
+			    	{
+			    	?>
+				    	<ul class="navbar-nav">
+				      		<li class="nav-item active">
+				        		<a class="nav-link" href="product.php">Produtos e Voluntáriado</a>
+				      		</li>
+				    	</ul>
+			    	<?php 
+			    	}
+			    	?>
+			    	<ul class="navbar-nav">
+			      		<li class="nav-item active">
+			        		<a class="nav-link" href="organs.php">Organização e Doação</a>
 			      		</li>
 			    	</ul>
 

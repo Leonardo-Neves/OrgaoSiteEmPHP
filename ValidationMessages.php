@@ -461,3 +461,123 @@ if(isset($_SESSION['ErroDatabase']))
 unset($_SESSION['ErroDatabase']);
 ?>
 
+<?php 
+if(isset($_SESSION['AlterSuccess']))
+{
+	$result = $_SESSION['AlterSuccess'];
+?>
+	<p class="alert alert-success"><?php echo $result ?></p>
+<?php 
+}
+unset($_SESSION['AlterSuccess']);
+?>
+
+<?php 
+if(isset($_SESSION['AlterError']))
+{
+	$result = $_SESSION['AlterError'];
+?>
+	<p class="alert alert-danger"><?php echo $result ?></p>
+<?php 
+}
+unset($_SESSION['AlterError']);
+?>
+
+<?php 
+if(isset($_SESSION['UserNotFound']))
+{
+	$result = $_SESSION['UserNotFound'];
+?>
+	<p class="alert alert-danger"><?php echo $result ?></p>
+<?php 
+}
+unset($_SESSION['UserNotFound']);
+?>
+
+<?php 
+if(isset($_SESSION['AlterPasswordSuccess']))
+{
+	$result = $_SESSION['AlterPasswordSuccess'];
+?>
+	<p class="alert alert-success"><?php echo $result ?></p>
+<?php 
+}
+unset($_SESSION['AlterPasswordSuccess']);
+?>
+
+<?php 
+if(isset($_SESSION['TitleErrorZero']))
+{
+	$result = $_SESSION['TitleErrorZero'];
+?>
+	<p class="alert alert-danger"><?php echo $result ?></p>
+<?php 
+}
+unset($_SESSION['TitleErrorZero']);
+?>
+
+<?php 
+if(isset($_SESSION['TitleErrorNull']))
+{
+	$result = $_SESSION['TitleErrorNull'];
+?>
+	<p class="alert alert-danger"><?php echo $result ?></p>
+<?php 
+}
+unset($_SESSION['TitleErrorNull']);
+?>
+
+<?php 
+if(isset($_SESSION['TitleErrorMaxLength']))
+{
+	$result = $_SESSION['TitleErrorMaxLength'];
+?>
+	<p class="alert alert-danger"><?php echo $result ?></p>
+<?php 
+}
+unset($_SESSION['TitleErrorMaxLength']);
+?>
+
+<?php 
+if(isset($_SESSION['ProductRegisterSuccess']))
+{
+	$result = $_SESSION['ProductRegisterSuccess'];
+?>
+	<p class="alert alert-success"><?php echo $result ?></p>
+<?php 
+}
+unset($_SESSION['ProductRegisterSuccess']);
+?>
+
+<?php 
+if(isset($_SESSION['ProductRegisterError']))
+{
+	$result = $_SESSION['ProductRegisterError'];
+?>
+	<p class="alert alert-danger"><?php echo $result ?></p>
+<?php 
+}
+unset($_SESSION['ProductRegisterError']);
+?>
+
+<?php 
+if(isset($_SESSION['ProductRemoveSuccess']))
+{
+	$result = $_SESSION['ProductRemoveSuccess'];
+?>
+	<p class="alert alert-success"><?php echo $result ?></p>
+<?php 
+}
+unset($_SESSION['ProductRemoveSuccess']);
+?>
+
+<?php 
+if(isset($_SESSION['ProductRemoveError']))
+{
+	$result = $_SESSION['ProductRemoveError'];
+?>
+	<p class="alert alert-danger"><?php echo $result ?></p>
+<?php 
+}
+unset($_SESSION['ProductRemoveError']);
+?>
